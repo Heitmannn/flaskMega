@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Hi {{ user.name }} </h1>
+    <p> Det er sånnn det er </p>
+    <p> Mine interesser. </p>
+    {% for a in intzz%}
+    <div> <p> Jeg liker: {{a}} </p> </div>
+    {% endfor %}
+{% endblock %}

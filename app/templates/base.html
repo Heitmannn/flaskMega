@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <!-- Jinja: Her sjekker vi om barnet (index.html) har gitt oss en tittel -->
+    {% if title %}
+    <title>{{ title }} - Min Blogg</title>
+    {% else %}
+    <title>Velkommen til Min Blogg</title>
+    {% endif %}
+    <style>
+        /* Enkel CSS for å skille seksjonene visuelt */
+        body { font-family: sans-serif; padding: 20px; }
+        nav { background-color: #f0f0f0; padding: 10px; margin-bottom: 20px; border-bottom: 2px solid #ccc;}
+        nav a { margin-right: 15px; text-decoration: none; color: #333; font-weight: bold;}
+        .content { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <!-- Felles navigasjonsmeny for alle sider -->
+    <nav>
+        <a href="/index">Hjem</a>
+        <a href="#">Logg inn</a>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
