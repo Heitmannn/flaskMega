@@ -18,9 +18,20 @@
 <body>
     <!-- Felles navigasjonsmeny for alle sider -->
     <nav>
-        <a href="/index">Hjem</a>
-        <a href="#">Logg inn</a>
+        <a href="{{ url_for('index')}}">Hjem</a>
+        <a href="{{url_for('login')}}">Logg inn</a>
     </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>
+            {{message}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     <div class="content">
         {% block content %}{% endblock %}
     </div>
